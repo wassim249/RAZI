@@ -5,6 +5,8 @@ from pickle import load
 import os
 import streamlit as st
 
+
+
 def build_prompt(user_text,illness):
     """
     Build the prompt for the GPT-3 model
@@ -47,14 +49,6 @@ def load_model(config_file , model_file , label_encoder_file, tokenizer_folder):
             # download the model from google drive to models folder
             os.system(f"gdown --id {model_file} -O ./models/tf_model.h5")
         
-        st.success("Model downloaded successfully")
-    
-    else:
-        st.success("Model already downloaded")
-
-    
-
-
     # Load the BERT model weights
     model = TFBertForSequenceClassification.from_pretrained('./models/tf_model.h5', config=config)
 
