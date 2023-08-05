@@ -1,0 +1,18 @@
+.css-ffhzg2 {
+  background-color: #073c47;
+  background-image: linear-gradient(315deg, #042830 0%, #20042e 74%);
+}
+
+.css-usj992 {
+  background-color: transparent;
+}
+
+.chat-container {
+  display: flex;
+  align-items: center;
+}
+
+.chat-input {
+  flex: 1;
+  margin-right: 10px;
+}
