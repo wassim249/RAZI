@@ -39,12 +39,16 @@ def load_model(config_file , model_file , label_encoder_file, tokenizer_folder):
     # Load the BERT model configuration
     config = BertConfig.from_json_file(config_file)
 
-    try:
-        # download the model from google drive
-        os.system("cd ./models")
-        os.system(f"gdown --id {model_file}")
-    except Exception as e:
-        pass
+    # check if the model is already downloaded
+    if not os.path.exists('./models/tf_model.h5'):
+        try:
+            # download the model from google drive
+            os.system("cd ./models")
+            os.system(f"gdown --id {model_file}")
+        except Exception as e:
+            pass
+
+    
 
 
     # Load the BERT model weights
