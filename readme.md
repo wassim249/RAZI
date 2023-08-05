@@ -1,6 +1,9 @@
 # 👨🏼‍⚕️ RAZI.AI
 An Ai that can detect mental health issues and provide solutions to them.
 
+[![-----------------------------------------------------](
+https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)](https://github.com/BaseMax?tab=repositories)
+
 ## Inspiration
 Mental health is a very important issue that is often overlooked. We wanted to create a solution that would help people with mental health issues and provide them with solutions to their problems.
 
