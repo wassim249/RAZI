@@ -2,6 +2,7 @@ import tensorflow as tf
 import numpy as np
 from transformers import BertTokenizer, TFBertForSequenceClassification , BertConfig
 from pickle import load
+import os
 
 def build_prompt(user_text,illness):
     """
@@ -37,6 +38,14 @@ def load_model(config_file , model_file , label_encoder_file, tokenizer_folder):
     """
     # Load the BERT model configuration
     config = BertConfig.from_json_file(config_file)
+
+    try:
+        # download the model from google drive
+        os.system("cd ./models")
+        os.system(f"gdown --id {model_file}")
+    except Exception as e:
+        pass
+
 
     # Load the BERT model weights
     model = TFBertForSequenceClassification.from_pretrained(model_file, config=config)

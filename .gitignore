@@ -2,3 +2,4 @@ preprocessed_df.csv
 __pycache__/
 .env
 .streamlit.toml
+*.h5
