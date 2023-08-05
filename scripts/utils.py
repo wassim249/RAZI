@@ -3,6 +3,7 @@ import numpy as np
 from transformers import BertTokenizer, TFBertForSequenceClassification , BertConfig
 from pickle import load
 import os
+import streamlit as st
 
 def build_prompt(user_text,illness):
     """
@@ -41,12 +42,15 @@ def load_model(config_file , model_file , label_encoder_file, tokenizer_folder):
 
     # check if the model is already downloaded
     if not os.path.exists('./models/tf_model.h5'):
-        try:
-            # download the model from google drive
-            os.system("cd ./models")
-            os.system(f"gdown --id {model_file}")
-        except Exception as e:
-            pass
+
+        with st.spinner("Please wait we are downloading the model..."):
+            # download the model from google drive to models folder
+            os.system(f"gdown --id {model_file} -O ./models/tf_model.h5")
+        
+        st.success("Model downloaded successfully")
+    
+    else:
+        st.success("Model already downloaded")
 
     
 
