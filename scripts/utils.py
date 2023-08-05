@@ -52,7 +52,7 @@ def load_model(config_file , model_file , label_encoder_file, tokenizer_folder):
 
 
     # Load the BERT model weights
-    model = TFBertForSequenceClassification.from_pretrained(model_file, config=config)
+    model = TFBertForSequenceClassification.from_pretrained('./models/tf_model.h5', config=config)
 
     # Load the tokenizer
     tokenizer = BertTokenizer.from_pretrained(tokenizer_folder)
