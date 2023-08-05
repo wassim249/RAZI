@@ -1,5 +1,5 @@
 preprocessed_df.csv
 __pycache__/
 .env
-.streamlit.toml
+.streamlit/secrets.toml
 *.h5
