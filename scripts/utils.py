@@ -47,7 +47,7 @@ def load_model(config_file , model_file , label_encoder_file, tokenizer_folder):
 
         with st.spinner("Please wait we are downloading the model..."):
             # download the model from google drive to models folder
-            os.system(f"gdown --id {model_file} -O ./models/tf_model.h5")
+            os.system(f"gdown {model_file} -O ./models/tf_model.h5")
         
     # Load the BERT model weights
     model = TFBertForSequenceClassification.from_pretrained('./models/tf_model.h5', config=config)
