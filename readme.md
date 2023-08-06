@@ -1,6 +1,9 @@
 # 👨🏼‍⚕️ RAZI.AI
 An Ai that can detect mental health issues and provide solutions to them.
 
+Try it out [here](https://raziai.streamlit.app/)
+
+
 [![-----------------------------------------------------](
 https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)](https://github.com/BaseMax?tab=repositories)
 
