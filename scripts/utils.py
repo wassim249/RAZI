@@ -5,8 +5,7 @@ from pickle import load
 import os
 import streamlit as st
 from huggingface_hub import hf_hub_download
-import joblib
-
+import huggingface_hub
 
 
 def build_prompt(user_text,illness):
