@@ -24,7 +24,6 @@ openai.api_key = st.secrets["openai_secret"]
 # load the model and tokenizer from the secrets
 model , tokenizer , label_encoder = load_model(
     config_file = st.secrets["config_file"],
-    model_file = st.secrets["model_file"],
     label_encoder_file = st.secrets["label_encoder_file"],
     tokenizer_folder = st.secrets["tokenizer_folder"]
     )

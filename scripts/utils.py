@@ -4,6 +4,8 @@ from transformers import BertTokenizer, TFBertForSequenceClassification , BertCo
 from pickle import load
 import os
 import streamlit as st
+from huggingface_hub import hf_hub_download
+import joblib
 
 
 
@@ -26,7 +28,7 @@ def build_prompt(user_text,illness):
       ...
     """
 
-def load_model(config_file , model_file , label_encoder_file, tokenizer_folder):
+def load_model(config_file  , label_encoder_file, tokenizer_folder):
     """
     Load the BERT model and tokenizer
     params:
@@ -46,8 +48,8 @@ def load_model(config_file , model_file , label_encoder_file, tokenizer_folder):
     if not os.path.exists('./models/tf_model.h5'):
 
         with st.spinner("Please wait we are downloading the model..."):
-            # download the model from google drive to models folder
-            os.system(f"gdown {model_file} -O ./models/tf_model.h5")
+            # download the model from the Hugging Face Hub and save it locally in the models folder
+            hf_hub_download(repo_id="wassim249/razi", filename="tf_model.h5", local_dir="./models")
         
     # Load the BERT model weights
     model = TFBertForSequenceClassification.from_pretrained('./models/tf_model.h5', config=config)
