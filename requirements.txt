@@ -8,5 +8,5 @@ tensorflow
 transformers
 gdown==4.0.2
 huggingface_hub
-sklearn
+scikit-learn
 
