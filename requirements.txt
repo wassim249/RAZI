@@ -6,7 +6,8 @@ langchain
 streamlit
 tensorflow
 transformers
-gdown==4.0.2
+gdown
+tf-keras
 huggingface_hub
 scikit-learn
 
