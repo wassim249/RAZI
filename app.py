@@ -1,6 +1,5 @@
 import streamlit as st
-from backend.agent import RAZIAgent
-from langchain_core.messages import AIMessage
+
 
 # edit streamlit page config
 st.set_page_config(
@@ -15,6 +14,9 @@ st.markdown("This is a demo of a chatbot that helps you detect a mental illness.
 st.markdown("Made by [Wassim EL BAKKOURI](#wassim.elbakkouri@yahoo.com) & [Fatima Zahra MOUMENE](#moumene.fatimazahra2000@gmail.com)")
 st.markdown('<style>' + open('./styles/style.css').read() + '</style>', unsafe_allow_html=True)
 
+
+from backend.agent import RAZIAgent
+from langchain_core.messages import AIMessage
 
 agent = RAZIAgent().get_agent()
 
