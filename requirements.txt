@@ -8,6 +8,7 @@ tensorflow
 transformers
 gdown
 tf-keras
+langchainhub
 huggingface_hub
 scikit-learn
 
