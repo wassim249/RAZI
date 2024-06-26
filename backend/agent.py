@@ -1,6 +1,5 @@
 
 import os
-from dotenv import load_dotenv
 from langchain.agents import AgentExecutor, create_react_agent
 from langchain.memory import ConversationBufferMemory
 from langchain.tools import tool
@@ -16,7 +15,6 @@ from huggingface_hub import hf_hub_download
 
 class RAZIAgent:
     def __init__(self):
-        load_dotenv()
         self.prompt = pull("hwchase17/react")
         self.prompt.template = """You're name is RAZI,a mental health professional, you're role is to help the user detect his mental illness and provide him with the best advice to overcome it,
         you should use a friendly tone and always be compassionate,avoid using a robotic tone""" + \
